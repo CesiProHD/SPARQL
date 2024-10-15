@@ -1,6 +1,6 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix ex: <http://abandoned.cars.com> .
+@prefix ex: <http://abandoned.cars.com/> .
 
 <https://abandoned.cars.com/Adur_2000_01> ex:hasAmount "793" ;
 	ex:hasDistrict <https://abandoned.cars.com/districts/Adur> ;
