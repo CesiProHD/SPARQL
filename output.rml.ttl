@@ -5,7 +5,7 @@
 @prefix ql: <http://semweb.mmlab.be/ns/ql#> .
 @prefix map: <http://mapping.example.com/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix ex: <http://abandoned.cars.com> .
+@prefix ex: <http://abandoned.cars.com/> .
 
 map:map_Data_2000_01_000 rml:logicalSource map:source_000 ;
 	rdf:type rr:TriplesMap ;
