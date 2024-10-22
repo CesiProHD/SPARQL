@@ -4,7 +4,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix ql: <http://semweb.mmlab.be/ns/ql#> .
 @prefix map: <http://mapping.example.com/> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl/> .
 @prefix ex: <http://abandoned.cars.com/> .
 
 map:map_Data_2000_01_000 rml:logicalSource map:source_000 ;
@@ -58,7 +58,7 @@ map:map_Data_2007_08_000 rml:logicalSource map:source_007 ;
 map:map_District_000 rml:logicalSource map:source_008 ;
 	rdf:type rr:TriplesMap ;
 	rdfs:label "District" ;
-	rr:predicateObjectMap map:pom_032, map:pom_033, map:pom_034 ;
+	rr:predicateObjectMap map:pom_032, map:pom_033, map:pom_034, map:pom_035 ;
 	rr:subjectMap map:s_008 .
 
 map:om_000 rdf:type rr:ObjectMap ;
@@ -169,8 +169,9 @@ map:om_026 rml:reference "Region" ;
 	rdf:type rr:ObjectMap ;
 	rr:termType rr:Literal .
 
-map:om_027 rdf:type rr:ObjectMap ;
-	rr:parentTriplesMap map:map_District_000 .
+map:om_027 rml:reference "same_as_wikidata_district" ;
+	rdf:type rr:ObjectMap ;
+	rr:termType rr:IRI .
 
 map:om_028 rdf:type rr:ObjectMap ;
 	rr:parentTriplesMap map:map_District_000 .
@@ -191,6 +192,9 @@ map:om_033 rdf:type rr:ObjectMap ;
 	rr:parentTriplesMap map:map_District_000 .
 
 map:om_034 rdf:type rr:ObjectMap ;
+	rr:parentTriplesMap map:map_District_000 .
+
+map:om_035 rdf:type rr:ObjectMap ;
 	rr:parentTriplesMap map:map_District_000 .
 
 map:pm_000 rdf:type rr:PredicateMap ;
@@ -298,6 +302,9 @@ map:pm_033 rdf:type rr:PredicateMap ;
 map:pm_034 rdf:type rr:PredicateMap ;
 	rr:constant ex:hasRegion .
 
+map:pm_035 rdf:type rr:PredicateMap ;
+	rr:constant owl:sameAs .
+
 map:pom_000 rdf:type rr:PredicateObjectMap ;
 	rr:objectMap map:om_000 ;
 	rr:predicateMap map:pm_000 .
@@ -311,7 +318,7 @@ map:pom_002 rdf:type rr:PredicateObjectMap ;
 	rr:predicateMap map:pm_002 .
 
 map:pom_003 rdf:type rr:PredicateObjectMap ;
-	rr:objectMap map:om_027 ;
+	rr:objectMap map:om_028 ;
 	rr:predicateMap map:pm_003 .
 
 map:pom_004 rdf:type rr:PredicateObjectMap ;
@@ -327,7 +334,7 @@ map:pom_006 rdf:type rr:PredicateObjectMap ;
 	rr:predicateMap map:pm_006 .
 
 map:pom_007 rdf:type rr:PredicateObjectMap ;
-	rr:objectMap map:om_028 ;
+	rr:objectMap map:om_029 ;
 	rr:predicateMap map:pm_007 .
 
 map:pom_008 rdf:type rr:PredicateObjectMap ;
@@ -343,7 +350,7 @@ map:pom_010 rdf:type rr:PredicateObjectMap ;
 	rr:predicateMap map:pm_010 .
 
 map:pom_011 rdf:type rr:PredicateObjectMap ;
-	rr:objectMap map:om_029 ;
+	rr:objectMap map:om_030 ;
 	rr:predicateMap map:pm_011 .
 
 map:pom_012 rdf:type rr:PredicateObjectMap ;
@@ -359,7 +366,7 @@ map:pom_014 rdf:type rr:PredicateObjectMap ;
 	rr:predicateMap map:pm_014 .
 
 map:pom_015 rdf:type rr:PredicateObjectMap ;
-	rr:objectMap map:om_030 ;
+	rr:objectMap map:om_031 ;
 	rr:predicateMap map:pm_015 .
 
 map:pom_016 rdf:type rr:PredicateObjectMap ;
@@ -375,7 +382,7 @@ map:pom_018 rdf:type rr:PredicateObjectMap ;
 	rr:predicateMap map:pm_018 .
 
 map:pom_019 rdf:type rr:PredicateObjectMap ;
-	rr:objectMap map:om_031 ;
+	rr:objectMap map:om_032 ;
 	rr:predicateMap map:pm_019 .
 
 map:pom_020 rdf:type rr:PredicateObjectMap ;
@@ -391,7 +398,7 @@ map:pom_022 rdf:type rr:PredicateObjectMap ;
 	rr:predicateMap map:pm_022 .
 
 map:pom_023 rdf:type rr:PredicateObjectMap ;
-	rr:objectMap map:om_032 ;
+	rr:objectMap map:om_033 ;
 	rr:predicateMap map:pm_023 .
 
 map:pom_024 rdf:type rr:PredicateObjectMap ;
@@ -407,7 +414,7 @@ map:pom_026 rdf:type rr:PredicateObjectMap ;
 	rr:predicateMap map:pm_026 .
 
 map:pom_027 rdf:type rr:PredicateObjectMap ;
-	rr:objectMap map:om_033 ;
+	rr:objectMap map:om_034 ;
 	rr:predicateMap map:pm_027 .
 
 map:pom_028 rdf:type rr:PredicateObjectMap ;
@@ -423,7 +430,7 @@ map:pom_030 rdf:type rr:PredicateObjectMap ;
 	rr:predicateMap map:pm_030 .
 
 map:pom_031 rdf:type rr:PredicateObjectMap ;
-	rr:objectMap map:om_034 ;
+	rr:objectMap map:om_035 ;
 	rr:predicateMap map:pm_031 .
 
 map:pom_032 rdf:type rr:PredicateObjectMap ;
@@ -437,6 +444,10 @@ map:pom_033 rdf:type rr:PredicateObjectMap ;
 map:pom_034 rdf:type rr:PredicateObjectMap ;
 	rr:objectMap map:om_026 ;
 	rr:predicateMap map:pm_034 .
+
+map:pom_035 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_027 ;
+	rr:predicateMap map:pm_035 .
 
 map:rules_000 <http://rdfs.org/ns/void#exampleResource> map:map_Data_2000_01_000, map:map_Data_2001_02_000, map:map_Data_2002_03_000, map:map_Data_2003_04_000, map:map_Data_2004_05_000, map:map_Data_2005_06_000, map:map_Data_2006_07_000, map:map_Data_2007_08_000, map:map_District_000 ;
 	rdf:type <http://rdfs.org/ns/void#Dataset> .
@@ -469,38 +480,38 @@ map:s_008 rdf:type rr:SubjectMap ;
 	rr:template "https://abandoned.cars.com/districts/{District}" .
 
 map:source_000 rml:referenceFormulation ql:CSV ;
-	rml:source "abandoned_cars.csv" ;
+	rml:source "abandoned_cars_with_links.csv" ;
 	rdf:type rml:LogicalSource .
 
 map:source_001 rml:referenceFormulation ql:CSV ;
-	rml:source "abandoned_cars.csv" ;
+	rml:source "abandoned_cars_with_links.csv" ;
 	rdf:type rml:LogicalSource .
 
 map:source_002 rml:referenceFormulation ql:CSV ;
-	rml:source "abandoned_cars.csv" ;
+	rml:source "abandoned_cars_with_links.csv" ;
 	rdf:type rml:LogicalSource .
 
 map:source_003 rml:referenceFormulation ql:CSV ;
-	rml:source "abandoned_cars.csv" ;
+	rml:source "abandoned_cars_with_links.csv" ;
 	rdf:type rml:LogicalSource .
 
 map:source_004 rml:referenceFormulation ql:CSV ;
-	rml:source "abandoned_cars.csv" ;
+	rml:source "abandoned_cars_with_links.csv" ;
 	rdf:type rml:LogicalSource .
 
 map:source_005 rml:referenceFormulation ql:CSV ;
-	rml:source "abandoned_cars.csv" ;
+	rml:source "abandoned_cars_with_links.csv" ;
 	rdf:type rml:LogicalSource .
 
 map:source_006 rml:referenceFormulation ql:CSV ;
-	rml:source "abandoned_cars.csv" ;
+	rml:source "abandoned_cars_with_links.csv" ;
 	rdf:type rml:LogicalSource .
 
 map:source_007 rml:referenceFormulation ql:CSV ;
-	rml:source "abandoned_cars.csv" ;
+	rml:source "abandoned_cars_with_links.csv" ;
 	rdf:type rml:LogicalSource .
 
 map:source_008 rml:referenceFormulation ql:CSV ;
-	rml:source "abandoned_cars.csv" ;
+	rml:source "abandoned_cars_with_links.csv" ;
 	rdf:type rml:LogicalSource .
 
